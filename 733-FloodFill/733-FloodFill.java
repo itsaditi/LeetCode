@@ -18,8 +18,6 @@ class Solution {
         queue.add(new int[]{sr, sc});
                 System.out.print(queue);
 
-        System.out.print(queue.contains(new int[]{sr, sc}));
-
         while (!queue.isEmpty()) {
             int[] topElement = queue.poll();
 
