@@ -16,8 +16,6 @@ class Solution {
         Queue<int[]> queue = new LinkedList<>();
         int[][] directions = new int[][]{{0, -1}, {-1, 0}, {1, 0}, {0, 1}};
         queue.add(new int[]{sr, sc});
-                System.out.print(queue);
-
         while (!queue.isEmpty()) {
             int[] topElement = queue.poll();
 
