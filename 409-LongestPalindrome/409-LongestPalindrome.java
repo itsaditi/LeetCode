@@ -6,6 +6,9 @@ class Solution {
          * * To compute the plaindrome length - 
          *  * Compute sum of all letters with even number of occurences
          *  * Check if any letter exists with 1 occurence, add that to the computed sum. 
+         * 
+         * Note - every character with an odd frequency has one unused occurrence 
+         * in longest palindrome, except for one character that can be used as the center
          */
 
         HashMap<Character, Integer> map = new HashMap<>();
@@ -34,6 +37,8 @@ class Solution {
             if (elementValue % 2 == 0) {
                 longestPalindromeLen += elementValue;
             } else {
+                // If the frequency is odd, one occurrence of the
+                // character will remain without a match
                 longestPalindromeLen += elementValue - 1;
                 foundElementWithOneOccurence = true;
             }
