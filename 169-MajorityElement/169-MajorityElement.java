@@ -15,12 +15,6 @@ class Solution {
             if (occMap.get(num) > majorityElemBound) return num;
         }
 
-        // for(Map.Entry<Integer, Integer> mapElem: occMap.entrySet()) {
-        //     if (mapElem.getValue() > majorityElemBound) {
-        //         return mapElem.getKey();
-        //     }
-        // }
-
         return 0;
     }
 }
