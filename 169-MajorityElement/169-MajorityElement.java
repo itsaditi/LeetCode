@@ -8,17 +8,18 @@ class Solution {
 
         // Key - Element and Value - Occurenec of that elemenct
         TreeMap <Integer, Integer> occMap = new TreeMap<>();
+        int majorityElemBound = nums.length / 2 ;
 
         for (Integer num: nums) {
             occMap.put(num, occMap.getOrDefault(num, 0) + 1);
+            if (occMap.get(num) > majorityElemBound) return num;
         }
 
-        int majorityElemBound = nums.length / 2 ;
-        for(Map.Entry<Integer, Integer> mapElem: occMap.entrySet()) {
-            if (mapElem.getValue() > majorityElemBound) {
-                return mapElem.getKey();
-            }
-        }
+        // for(Map.Entry<Integer, Integer> mapElem: occMap.entrySet()) {
+        //     if (mapElem.getValue() > majorityElemBound) {
+        //         return mapElem.getKey();
+        //     }
+        // }
 
         return 0;
     }
