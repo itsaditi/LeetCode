@@ -4,9 +4,10 @@ class Solution {
         // it will return elements in sorted way
 
         // How do I pop elements in descending order ?
+        //      By using Collections.reverseOrder() while initializaing TreeMap
 
         // Key - Element and Value - Occurenec of that elemenct
-        TreeMap <Integer, Integer> occMap = new TreeMap<>(Collections.reverseOrder());
+        TreeMap <Integer, Integer> occMap = new TreeMap<>();
 
         for (Integer num: nums) {
             occMap.put(num, occMap.getOrDefault(num, 0) + 1);
