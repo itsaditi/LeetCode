@@ -22,7 +22,7 @@ class Solution {
         }
 
         count[amount - 1] = leastDiff == Integer.MAX_VALUE ? -1 : leastDiff;
-        System.out.println(count[amount - 1]);
+        System.out.println(amount - 1 + " = " + leastDiff);
 
         return count[amount - 1];
     }
