@@ -15,3 +15,5 @@
 * Accounts merge - Graph
 * Trie - Check its TrieNode's implementation
 * Subsets - BackTracking
+* Word Break - BFS
+* String to Integer (ATOI) - Complete PIA
