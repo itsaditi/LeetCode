@@ -19,3 +19,4 @@
 * String to Integer (ATOI) - Complete PIA
 * Spiral Matrix
 * Gas station - Difficult
+* Next Permutation - Difficult
