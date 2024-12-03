@@ -2,9 +2,11 @@ class Solution {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         // STEP 1 - Insert new Interval, add it to intervals and sort it;
         List<int[]> intervalWithNewInterval = new ArrayList<>();
+
         for (int[] interval: intervals) intervalWithNewInterval.add(interval);
+
         intervalWithNewInterval.add(new int[]{newInterval[0], newInterval[1]});
-        intervalWithNewInterval.sort((a,b) -> Integer.compare(a[0], b[0]));
+        intervalWithNewInterval.sort((a,b) -> a[0]-b[0]);
 
         // STEP 2 - Merge overlapping Intervals
         List<int[]> mergedIntervals = new LinkedList<>();
