@@ -27,3 +27,4 @@
 ### Editorials with good deep dive
 * https://leetcode.com/problems/largest-number/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
 * Code - https://leetcode.com/problems/zero-array-transformation-ii/description/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
+* Editorial - https://leetcode.com/problems/subarray-sum-equals-k/editorial/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM&role=full-stack
