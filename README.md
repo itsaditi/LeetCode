@@ -24,6 +24,6 @@
 * Minimum Area Rectangle
 * Largest Number - Custom sorting comparator using PriorityQueue and ```Arrays.sort```
 
-  ### Editorials with good deep dive
-  * https://leetcode.com/problems/largest-number/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
-  * Code - https://leetcode.com/problems/zero-array-transformation-ii/description/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
+### Editorials with good deep dive
+* https://leetcode.com/problems/largest-number/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
+* Code - https://leetcode.com/problems/zero-array-transformation-ii/description/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
