@@ -22,3 +22,4 @@
 * Next Permutation - Difficult
 * Zero Array Transformation I & II - Difference Array Variation
 * Minimum Area Rectangle
+* Largest Number - Custom sorting comparator using PriorityQueue and ```Arrays.sort```
