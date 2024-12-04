@@ -1,51 +1,48 @@
 class Solution {
-    int t, b, l, r;
-    int[][] matrix;
     public List<Integer> spiralOrder(int[][] matrix) {
-        this.matrix = matrix;
-        final int m = matrix.length;
-        final int n = matrix[0].length;
-        t = 0; b = m-1;
-        l = 0; r = n-1;
-        List<Integer> list = new ArrayList<>();
-        int i=0;
-        while (t <= b && l <= r) {
-            if (i == 0)
-                Right(list);
-            if (i == 1)
-                Down(list);
-            if (i == 2)
-                Left(list);
-            if (i == 3)
-                Up(list);
-            i++;
-            i %= 4;
+        List<Integer> res = new ArrayList<>();
+
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        // Boundaries
+        int up = 0;
+        int down = rows - 1;
+        int left = 0;
+        int right = cols - 1;
+
+        int resExpectedLength = rows * cols;
+
+        while (res.size() < resExpectedLength) {
+            // Traverse left to right
+            for (int col = left; col <= right; col ++) {
+                res.add(matrix[up][col]);
+            }
+
+            // Traverse Top to Bottom
+            for (int row = up + 1; row <= down; row++) {
+                res.add(matrix[row][right]);
+            }
+
+            // Traverse Right to left
+            if (up != down) {
+                for (int col = right - 1; col >= left; col --) {
+                    res.add(matrix[down][col]);
+                }
+            }
+
+            // Traverse Bottom to Top
+            if (right != left) {
+                for(int row = down - 1; row > up; row--) {
+                    res.add(matrix[row][left]);
+                }
+            }
+
+            up++;
+            down--;
+            left++;
+            right--;  
         }
-        return list;
-    }
-    
-    void Right(final List<Integer> list) {
-        for (int j=l; j<=r; j++) {
-            list.add(matrix[t][j]);
-        }
-        t++;
-    }
-    void Left(final List<Integer> list) {
-        for (int j=r; j>=l; j--) {
-            list.add(matrix[b][j]);
-        }
-        b--;
-    }
-    void Down(final List<Integer> list) {
-        for (int i=t; i<=b; i++) {
-            list.add(matrix[i][r]);
-        }
-        r--;
-    }
-    void Up(final List<Integer> list) {
-        for (int i=b; i>=t; i--) {
-            list.add(matrix[i][l]);
-        }
-        l++;
+        return res;
     }
 }
