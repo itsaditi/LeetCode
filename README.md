@@ -28,3 +28,11 @@
 * https://leetcode.com/problems/largest-number/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
 * Code - https://leetcode.com/problems/zero-array-transformation-ii/description/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
 * Editorial - https://leetcode.com/problems/subarray-sum-equals-k/editorial/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM&role=full-stack
+
+### Binary Search Problems 
+* https://leetcode.com/problems/koko-eating-bananas/description/
+* https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/description/
+* https://leetcode.com/problems/magnetic-force-between-two-balls/description/
+* https://leetcode.com/problems/divide-chocolate/description/
+* https://leetcode.com/problems/cutting-ribbons/description/
+* https://leetcode.com/problems/split-array-largest-sum/
