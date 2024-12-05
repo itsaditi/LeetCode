@@ -17,8 +17,16 @@ class Solution {
             int mid = left + (right - left) / 2;
 
             if (canBeShipped(mid, weights, days)) {
+                // If we are able to ship the packages with mid capacity 
+                // within the required days, we know the answer is at most mid, 
+                // so we can look for a better answer by moving to the lower half 
+                // - change r = mid.
                 right = mid;
             } else {
+                // if we are not able to ship the packages with mid capacity, 
+                // we cannot ship the packages with any capacity less than or 
+                //equal to mid. So, we move to the upper half of the range by 
+                // moving l = mid + 1.
                 left = mid + 1;
             }
         }
