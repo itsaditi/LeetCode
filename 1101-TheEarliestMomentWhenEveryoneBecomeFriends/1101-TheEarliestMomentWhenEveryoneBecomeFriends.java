@@ -1,7 +1,13 @@
 class Solution {
     HashMap<Integer, List<Integer>> graph = new HashMap<>();
     public int earliestAcq(int[][] logs, int n) {
+        // Total TC - O(n^2 + log n)
+        // Total SC - O(n)
+
+        // O(log n)
         Arrays.sort(logs, (a,b) -> a[0] - b[0]);
+
+        // O(n)
         for (int[] log: logs) {
             int friend1 = log[1];
             int friend2 = log[2];
@@ -23,6 +29,7 @@ class Solution {
     }
 
     private boolean areAllAcq(int n) {
+        // BFS TC - O(n)
         Queue<Integer> queue = new LinkedList<>();
         Set<Integer> visited = new HashSet<>();
         System.out.println(graph);
