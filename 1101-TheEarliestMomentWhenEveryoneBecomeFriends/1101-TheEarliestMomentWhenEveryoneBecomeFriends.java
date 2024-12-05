@@ -1,22 +1,46 @@
 class Solution {
+    HashMap<Integer, List<Integer>> graph = new HashMap<>();
     public int earliestAcq(int[][] logs, int n) {
-        Arrays.sort(logs, (a, b) -> Integer.compare(a[0], b[0]));
-        int count = n;
-        int[] parent = new int[n];
-        Arrays.fill(parent, -1);
-        
-        for (int[] log : logs) {
-            if (find(parent, log[1]) != find(parent, log[2])) {
-                parent[find(parent, log[1])] = log[2];
-                count--;
+        Arrays.sort(logs, (a,b) -> a[0] - b[0]);
+        for (int[] log: logs) {
+            int friend1 = log[1];
+            int friend2 = log[2];
+
+            if (!graph.containsKey(friend1)) {
+                graph.put(friend1, new ArrayList<>());
             }
-            if (count == 1) return log[0];
-        }
+
+            if (!graph.containsKey(friend2)) {
+                graph.put(friend2, new ArrayList<>());
+            }
+
+            graph.get(friend1).add(friend2);
+            graph.get(friend2).add(friend1);
+
+            if (areAllAcq(n)) return log[0];
+        }   
         return -1;
     }
-    
-    private int find(int[] p, int f) {
-        if (p[f] == -1) return f;
-        return find(p, p[f]);
+
+    private boolean areAllAcq(int n) {
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+        System.out.println(graph);
+        queue.add(0);
+
+        while(!queue.isEmpty()) {
+            int poppedElement = queue.poll();
+
+            visited.add(poppedElement);
+            if (graph.containsKey(poppedElement)) {
+                for (int friend: graph.get(poppedElement)) {
+                    if (!visited.contains(friend)) queue.add(friend);
+                }
+            }
+        }
+
+        if (visited.size() == n) return true;
+
+        return false;
     }
 }
