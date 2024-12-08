@@ -23,6 +23,7 @@
 * Zero Array Transformation I & II - Difference Array Variation
 * Minimum Area Rectangle
 * Largest Number - Custom sorting comparator using PriorityQueue and ```Arrays.sort```
+* TwoBestNon-OverlappingEvents
 
 ### Editorials with good deep dive
 * https://leetcode.com/problems/largest-number/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
