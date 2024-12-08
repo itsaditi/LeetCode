@@ -10,8 +10,8 @@ class Solution {
         int right = givenMaxLengthRibbon;
 
         while (left < right) {
-            // int mid = left + (int) Math.ceil((double) (right - left) / 2);
-            int mid = (left + right + 1) / 2;
+            int mid = left + (int) Math.ceil((double) (right - left) / 2);
+            // int mid = (left + right + 1) / 2;
 
             if (checkLength(ribbons, k, mid)) {
                 left = mid;
