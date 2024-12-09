@@ -34,3 +34,16 @@ Constraints:
 	s is guaranteed to be a valid input.
 	All the integers in s are in the range [1, 300].
 
+ ## Note - 
+ * Traverse through string and put every char in stack, unless you encounter closing bracket.
+ * On encounterring closing bracket, do following -
+   * Pop from stack, until top element is not an opening bracket, this will create a part of the string.
+   * On encounterring opening bracket, stop and pop opening bracket from the stack.
+   * Imp : It is imp to pop opening bracket.
+   * While character is digit, pop from the stack, convert to int (by '4' - '0') and multiplying to base of 10 to the power. This will create ```n``` to repeat above popped string;
+   * Then push characters of the string popped so far to the stack for ```n``` times.
+* Pop every thing from the stack and generate string. Stack will return reverse of the answer, so use -
+```
+new StringBuilder(str).reverse().toString();
+```
+
