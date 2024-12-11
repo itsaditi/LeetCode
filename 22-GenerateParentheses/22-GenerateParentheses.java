@@ -6,6 +6,13 @@ class Solution {
 
     // Generate all possible paranthesis and check its validity once length 
     // of string is num * 2
+
+    // TC - O((2^(2n)) * n)
+    // * We are generating all possible strings of length 2n. At each character, 
+    //   we have two choices: choosing ( or ), which means there are a total of 2^(2n)
+    // * For each string of length 2n, we need to iterate through each character to 
+    //   verify it is a valid combination of parentheses, which takes an average of O(n) time.
+    //   unique strings.
     public List<String> generateParenthesis(int n) {
         num = n;
         res = new HashSet<>();
