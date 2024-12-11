@@ -4,6 +4,8 @@ class Solution {
 
     char[] paranthesis = new char[]{'(', ')'};
 
+    // Generate all possible paranthesis and check its validity once length 
+    // of string is num * 2
     public List<String> generateParenthesis(int n) {
         num = n;
         res = new HashSet<>();
