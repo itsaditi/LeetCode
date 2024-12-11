@@ -24,6 +24,7 @@
 * Minimum Area Rectangle
 * Largest Number - Custom sorting comparator using PriorityQueue and ```Arrays.sort```
 * TwoBestNon-OverlappingEvents
+* Jump Game
 
 ### Editorials with good deep dive
 * https://leetcode.com/problems/largest-number/?envType=company&envId=google&favoriteSlug=google-three-months&difficulty=MEDIUM
