@@ -36,7 +36,7 @@ class Solution {
     }
 
 
-    // TLE
+    // Greedy - TLE (checking all possible combinations)
     private void robFrom(int[] nums, int sum, int nextIndex) {
 
         if (nextIndex + 2 >= nums.length) {
