@@ -20,12 +20,11 @@ class Solution {
             int r = poppedElement.getKey();
             int c = poppedElement.getValue();
 
-            for (int i = 0 ; i <= n + 1; i ++) {
+            for (int i = 0 ; i <= n; i ++) {
                 matrix[i % n][c] = 0;
             }
 
-            for (int i = 0 ; i <= m + 1; i ++) {
-                System.out.println(r + " " + i % m + " " + i);
+            for (int i = 0 ; i <= m; i ++) {
                 matrix[r][i % m] = 0;
             }
         }
