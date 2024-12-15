@@ -1,7 +1,8 @@
 class Solution {
+    int n = 0, m = 0;
     public void setZeroes(int[][] matrix) {
-        int n = matrix.length;
-        int m = matrix[0].length;
+        n = matrix.length;
+        m = matrix[0].length;
 
         if (n == 1 && m == 1) return;
 
@@ -29,4 +30,5 @@ class Solution {
             }
         }
     }
+
 }
