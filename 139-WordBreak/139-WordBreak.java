@@ -1,5 +1,29 @@
 class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
+        // DP 
+        boolean[] memo = new boolean[s.length() + 1];
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(0);
+
+        while (!queue.isEmpty()) {
+            int start = queue.poll();
+            if (start == s.length()) return true;
+            for (int i = start + 1 ; i <= s.length() ; i++) {
+                if (memo[i]) continue;
+                if (wordDict.contains(s.substring(start, i))) {
+                    memo[i] = true;
+                    queue.add(i);
+                }
+            }
+        }
+        
+        return false;
+    }
+
+    public boolean wordBreak2(String s, List<String> wordDict) {
+        // BFS 
+        // Time Complexity - O(N^2)
+        // Space Complexity - O(N)
         Set<String> word = new HashSet<>(wordDict);
         Queue<Integer> queue = new LinkedList<>();
         boolean[] seen = new boolean[s.length() + 1];
