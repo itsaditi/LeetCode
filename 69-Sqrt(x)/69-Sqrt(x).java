@@ -1,4 +1,5 @@
 class Solution {
+    // O (log n)
     public int mySqrt(int x) {
         // int sqrt = (int) Math.pow(x, 0.5);
         if (x < 2) return x;
