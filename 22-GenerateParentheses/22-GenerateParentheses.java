@@ -29,14 +29,14 @@ class Solution {
             return;
         }
         // System.out.println(str);
-        if (opParanthesis <= num) {
+        // if (opParanthesis <= num) {
             for (Character bracket: paranthesis) {
                 if (bracket == '(')
                     createParanthesis(str.concat("("), opParanthesis + 1);
                 else if (bracket == ')'){
                     createParanthesis(str.concat(")"), opParanthesis);}
             }
-        }
+        // }
 
         return;
 
