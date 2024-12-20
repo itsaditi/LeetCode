@@ -1,6 +1,8 @@
 class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
-        // DP 
+        // BFS 
+        // Time Complexity - O(N^3)
+        // Space Complexity - O(N)
         boolean[] memo = new boolean[s.length() + 1];
         Queue<Integer> queue = new LinkedList<>();
         queue.add(0);
@@ -22,25 +24,25 @@ class Solution {
 
     public boolean wordBreak2(String s, List<String> wordDict) {
         // BFS 
-        // Time Complexity - O(N^2)
-        // Space Complexity - O(N)
+        // Time Complexity - O(N^3 + mk) - O(mk) is to create set
+        // Space Complexity - O(N + mk) 
         Set<String> word = new HashSet<>(wordDict);
         Queue<Integer> queue = new LinkedList<>();
         boolean[] seen = new boolean[s.length() + 1];
         queue.add(0);
 
-        while (!queue.isEmpty()) {
+        while (!queue.isEmpty()) { // O(n)
             int start = queue.poll();
             if (start == s.length()) {
                 return true;
             }
 
-            for (int end = start + 1; end <= s.length() ; end ++) {
+            for (int end = start + 1; end <= s.length() ; end ++) { // O(n)
                 if(seen[end]) {
                     continue;
                 }
 
-                if(word.contains(s.substring(start, end))) {
+                if(word.contains(s.substring(start, end))) { // Substring costs O(n)
                     seen[end] = true;
                     queue.add(end);
                 }
