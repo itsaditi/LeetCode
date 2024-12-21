@@ -18,6 +18,8 @@ class Solution {
 
     public int maxDepth(TreeNode root) {
         if (root == null) return 0;
+
+        int depth = 0;
         Queue<Pair<TreeNode, Integer>> queue = new LinkedList<>();
         queue.offer(new Pair(root, 0));
 
@@ -36,10 +38,10 @@ class Solution {
                 queue.offer(new Pair(node.right, level + 1));
             }
 
-            maxDepth = Math.max(maxDepth, level);
+            depth = Math.max(depth, level);
         }
 
-        return maxDepth + 1;
+        return depth + 1;
 
     }
 
