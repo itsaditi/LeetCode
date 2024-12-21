@@ -11,6 +11,9 @@ class Solution {
          * in longest palindrome, except for one character that can be used as the center
          */
 
+        // Time complexity --> O(N)
+        // Space complexity --> O(1), given that there can be at most 
+        // 52 x 2 (upper and lower case) unique characters ~ O(52 x 2)
         HashMap<Character, Integer> map = new HashMap<>();
         int longestPalindromeLen = 0;
         boolean foundElementWithOneOccurence = false;
