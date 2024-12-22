@@ -1,6 +1,6 @@
 class Solution {
 
-    public int[] twoSum(int[] numbers, int target) {
+    public int[] twoSum_HashMap(int[] numbers, int target) {
         // Works only if array will not contain duplicates
         int n = numbers.length;
 
@@ -22,8 +22,8 @@ class Solution {
         return new int[]{-1, -1};
     }
 
-    public int[] twoSum_BS(int[] numbers, int target) {
-        // Binary search
+    public int[] twoSum(int[] numbers, int target) {
+        // Binary search - O(log n)
 
         int start = 0, end = numbers.length - 1;
 
