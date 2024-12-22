@@ -1,5 +1,5 @@
 class Solution {
-    public int lengthOfLongestSubstring_HashSet2(String str) {
+    public int lengthOfLongestSubstring(String str) {
         HashSet<Character> set = new HashSet<>();
         int maxLength = 0;
 
@@ -16,7 +16,7 @@ class Solution {
         return maxLength;
     }
 
-    public int lengthOfLongestSubstring_HashSet(String str) {
+    public int lengthOfLongestSubstring_HashSet1(String str) {
     
         HashSet<Character> set = new HashSet<>();
         int maxLength = 0;
@@ -38,7 +38,7 @@ class Solution {
     }
 
 
-    public int lengthOfLongestSubstring(String str) {
+    public int lengthOfLongestSubstring_SlidingWindow(String str) {
         if (str.length() == 1) return 1;
         int longestSubstring = 0;
 
