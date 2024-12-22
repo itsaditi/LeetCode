@@ -1,5 +1,6 @@
 class Solution {
     public int lengthOfLongestSubstring(String str) {
+        // TC and SC - O(N) and O(N)
         HashSet<Character> set = new HashSet<>();
         int maxLength = 0;
 
