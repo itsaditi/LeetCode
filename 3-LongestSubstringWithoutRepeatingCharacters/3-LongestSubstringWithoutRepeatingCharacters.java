@@ -1,5 +1,22 @@
 class Solution {
+
     public int lengthOfLongestSubstring(String str) {
+        // TC and SC - O(N) and O(N)
+        Queue<Character> queue = new LinkedList<>();
+        int maxLength = 0;
+
+        for (int i = 0 ; i < str.length() ; i++) {
+            Character ch = str.charAt(i);
+            while (queue.contains(ch)) {
+                queue.poll();
+            }
+            queue.add(ch);
+            maxLength = Math.max(maxLength, queue.size());
+        }
+        return maxLength;
+    }
+
+    public int lengthOfLongestSubstring_HashSet2(String str) {
         // TC and SC - O(N) and O(N)
         HashSet<Character> set = new HashSet<>();
         int maxLength = 0;
