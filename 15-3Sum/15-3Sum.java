@@ -1,37 +1,8 @@
 class Solution {
 
-    //  public List<List<Integer>> threeSum(int[] nums) {
-    //     HashMap<Integer
-
-    //  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public List<List<Integer>> threeSum(int[] nums) {
         // Time Complexity - O(nlogn) (Sort) + O(n^2) ~ O(nlogn + n^2)
-        List<List<Integer>> res = new ArrayList<>();
+        HashSet<List<Integer>> res = new HashSet<>();
         Arrays.sort(nums);
 
         for (int i = 0 ; i < nums.length ; i ++) {
@@ -41,10 +12,39 @@ class Solution {
                 twoSum(nums, i, res);
             }
         }
-        return res;
+        List<List<Integer>> result = new ArrayList<>(res);
+        return result;
     }
 
-    private void twoSum(int[] nums, int i , List<List<Integer>> res) {
+    private void twoSum(
+        int[] nums,
+        int i,
+        HashSet<List<Integer>> res
+    ) {
+        int left = i + 1;
+        int right = nums.length - 1;
+
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+
+            if (sum == -(nums[i])) {
+                res.add(Arrays.asList(new Integer[]{nums[i], nums[left], nums[right]}));
+                left++;
+                right--;
+            } else {
+                if (sum < -(nums[i])) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+
+    }
+
+
+    // HashSet -> TC - O(nlogn + n^2) and SC - O(n)
+    private void twoSum_UsingSet(int[] nums, int i , List<List<Integer>> res) {
         HashSet<Integer> seen = new HashSet<>();
 
         for (int j = i + 1; j < nums.length ; j++) {
