@@ -1,5 +1,5 @@
 class Solution {
-    public int lengthOfLongestSubstring(String str) {
+    public int lengthOfLongestSubstring_HashSet2(String str) {
         HashSet<Character> set = new HashSet<>();
         int maxLength = 0;
 
@@ -15,29 +15,9 @@ class Solution {
         }
         return maxLength;
     }
+
     public int lengthOfLongestSubstring_HashSet(String str) {
-        // if (s.length() == 1) return 1;
-        // int longestSubstring = 0;
-
-        // // Sliding window
-        // // Time Complexity --> O(n^2)
-        // // Space Complexity --> O(n)
-        // for (int i = 0 ; i < s.length() - 1; i ++) {
-        //     HashSet<Character> seen = new HashSet<>();
-        //     seen.add(s.charAt(i));
-        //     for (int j = i + 1 ; j < s.length() ; j ++) {
-        //         Character currChar = s.charAt(j);
-        //         if (!seen.contains(currChar)) {
-        //             seen.add(currChar);
-        //         } else {
-        //             break;
-        //         }
-        //     }
-        //     longestSubstring = Math.max(longestSubstring, seen.size());
-        // }
-
-        // return longestSubstring;
-
+    
         HashSet<Character> set = new HashSet<>();
         int maxLength = 0;
         int left = 0;
@@ -52,15 +32,33 @@ class Solution {
             }
             set.add(str.charAt(right));
             maxLength = Math.max(maxLength, right - left + 1);
-
-            // to return the unique string
-            // if(right - left + 1 > maxLength){
-            //     maxLength = right - left + 1;
-            //     startOfMax = left;
-            // }
         }
-        //  return str.substring(startOfMax, startOfMax + maxLength);
          return maxLength;
         
+    }
+
+
+    public int lengthOfLongestSubstring(String str) {
+        if (str.length() == 1) return 1;
+        int longestSubstring = 0;
+
+        // Sliding window
+        // Time Complexity --> O(n^2)
+        // Space Complexity --> O(n)
+        for (int i = 0 ; i < str.length() - 1; i ++) {
+            HashSet<Character> seen = new HashSet<>();
+            seen.add(str.charAt(i));
+            for (int j = i + 1 ; j < str.length() ; j ++) {
+                Character currChar = str.charAt(j);
+                if (!seen.contains(currChar)) {
+                    seen.add(currChar);
+                } else {
+                    break;
+                }
+            }
+            longestSubstring = Math.max(longestSubstring, seen.size());
+        }
+
+        return longestSubstring;
     }
 }
