@@ -12,7 +12,7 @@ class Solution {
 
     /** OPTIMIZED - BINARY SEARCH **/
     // TC - O(n)
-    public int[][] kClosest_BinarySearch(int[][] points, int k) {
+    public int[][] kClosest(int[][] points, int k) {
         int n = points.length;
         double[] distance = new double[n];
         double low = 0, high = 0;
@@ -135,8 +135,8 @@ class Solution {
 
     }
 
-    public int[][] kClosest(int[][] points, int k) {
-        //BRUTE FORCE 
+    public int[][] kClosest_BruteForce(int[][] points, int k) {
+        /**** BRUTE FORCE ****/
         // Time Complexity --> O(n) + O(nlogn)
         // Space Complexity --> O(n)
         ArrayList<int[]> resultArr = new ArrayList<>();
