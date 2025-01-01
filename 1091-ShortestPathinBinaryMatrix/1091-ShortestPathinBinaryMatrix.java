@@ -3,7 +3,7 @@ class Solution {
     int row = 0, col = 0;
     int shortDistance = Integer.MAX_VALUE;
 
-    // BFS - TLE
+    // BFS
     // TC - O(row  * col) (TC for BFS is O(vertices + edges))
 
     public int shortestPathBinaryMatrix(int[][] grid) {
@@ -17,7 +17,6 @@ class Solution {
 
         Queue<int[]> queue = new LinkedList<>();
         boolean[][] visitedDP = new boolean[row][col];
-        System.out.println(visitedDP[0][0]);
 
         // Start BFS from the top-left cell
         queue.add(new int[]{0, 0, 1});
@@ -36,10 +35,6 @@ class Solution {
             for (int[] direction: DIRECTIONS) {
                 int neighborRow = r + direction[0];
                 int neighborCol = c + direction[1];
-
-                // if (!isValid(neighborRow, neighborCol)) continue;
-                // if (grid[neighborRow][neighborCol] == 1) continue;
-
                 if (
                     isValid(neighborRow, neighborCol) &&
                     grid[neighborRow][neighborCol] == 0 &&
