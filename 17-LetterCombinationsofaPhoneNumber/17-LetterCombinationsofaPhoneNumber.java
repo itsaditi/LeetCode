@@ -37,7 +37,7 @@ class Solution {
         int depth, 
         String current
     ) {
-        if (depth == lists.size()) {
+        if (current.length() == lists.size()) {
             result.add(current);
             return;
         }
