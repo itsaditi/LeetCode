@@ -8,14 +8,17 @@ The height of a rooted tree is the number of edges on the longest downward path 
 
  
 
-Example 1:
+#### Example 1:
+![image](https://github.com/user-attachments/assets/e8d2d2e6-187b-4327-b99c-0e8dab824a79)
 
 
 Input: n = 4, edges = [[1,0],[1,2],[1,3]]
 Output: [1]
 Explanation: As shown, the height of the tree is 1 when the root is the node with label 1 which is the only MHT.
-Example 2:
 
+#### Example 2:
+
+![image](https://github.com/user-attachments/assets/2290df4e-83aa-45ea-8705-e5e81bd77811)
 
 Input: n = 6, edges = [[3,0],[3,1],[3,2],[3,4],[5,4]]
 Output: [3,4]
