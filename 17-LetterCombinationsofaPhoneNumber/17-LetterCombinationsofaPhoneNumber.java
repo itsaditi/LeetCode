@@ -15,9 +15,6 @@ class Solution {
         numberLetterMap.put(8, new Character[]{'t', 'u', 'v'});
         numberLetterMap.put(9, new Character[]{'w', 'x', 'y', 'z'});
         
-        // if (digits.length() == 1) {
-        //     return Arrays.asList(numberLetterMap.get(digits.charAt(0) - '0'));
-        // }
 
         List<List<Character>> letterArr = new ArrayList<>();
     
