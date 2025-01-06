@@ -5,7 +5,7 @@ class Solution {
 
     int[][] directions = new int[][]{{0, -1}, {-1, 0}, {1, 0}, {0, 1}};
 
-    public int orangesRotting(int[][] grid) {
+    public int orangesRotting__(int[][] grid) {
         m = grid.length;
         n = grid[0].length;
         int numOfFreshOranges = 0;
@@ -57,7 +57,7 @@ class Solution {
 
 
 
-    public int orangesRotting__(int[][] grid) {
+    public int orangesRotting(int[][] grid) {
         m = grid.length;
         n = grid[0].length;
         int numOfFreshOranges = 0;
