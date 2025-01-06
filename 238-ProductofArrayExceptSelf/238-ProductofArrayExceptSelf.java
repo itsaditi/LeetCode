@@ -1,5 +1,10 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
+        /** Brute Force */
+
+        // Time complexity --> O(N)
+        // Space complexity --> O(1)
+
         int product = 1;
         int zeros = 0;
         for (Integer num: nums) {
