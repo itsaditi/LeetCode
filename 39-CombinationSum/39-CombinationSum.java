@@ -1,29 +1,36 @@
 class Solution {
-    HashSet<List<Integer>> sumCombo = new HashSet<>();
-
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        checkCombo(candidates, target, new int[0]);
-        return new ArrayList<>(sumCombo);
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> curr = new ArrayList<>();
+        backtracking(candidates, target, result, curr, 0);
+        return result;
     }
 
-    private void checkCombo(int[] candidates, int target, int[] candy) {
-        if (target == 0) { 
-            Arrays.sort(candy);
-            List<Integer> arr = new ArrayList<>();
-            for (int can: candy) arr.add(can);
-            System.out.println(arr);
-            sumCombo.add(arr);
+    private void backtracking(
+        int[] candidates,
+        int remain,
+        List<List<Integer>> result,
+        List<Integer> curr,
+        int startIndex
+    ) {
+        // Base case - 
+        if (remain == 0) {
+            result.add(new ArrayList<>(curr));
+        } else if (remain < 0) {
             return;
         }
 
-        if (target < 0) return;
-
-        for (int cand: candidates) {
-            int[] newArr = Arrays.copyOf(candy, candy.length + 1);
-            newArr[newArr.length - 1] = cand;
-            checkCombo(candidates, target - cand, newArr);
+        for (int i = startIndex ; i < candidates.length ; i++) {
+            curr.add(candidates[i]);
+            backtracking(
+                candidates,
+                remain - candidates[i],
+                result,
+                curr,
+                i
+            );
+            curr.remove(curr.size() - 1);
         }
-
         return;
     }
 }
