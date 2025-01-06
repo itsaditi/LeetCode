@@ -1,29 +1,30 @@
 class MinStack {
-
-    Stack<Integer> stack = new Stack<>();
-    PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+    Stack<int[]> stack = new Stack<>();
 
     public MinStack() {
         
     }
     
     public void push(int val) {
-        stack.push(val);
-        priorityQueue.add(val);
+        if (stack.isEmpty()) {
+            stack.push(new int[]{val, val});
+            return;
+        }
+
+        int min = Math.min(val, stack.peek()[1]);
+        stack.push(new int[]{val, min});
     }
     
     public void pop() {
-        Integer topElement = stack.peek();
-        priorityQueue.remove(topElement);
         stack.pop();
     }
     
     public int top() {
-        return stack.peek();
+        return stack.peek()[0];
     }
     
     public int getMin() {
-        return priorityQueue.peek();
+        return stack.peek()[1];
     }
 }
 
