@@ -5,6 +5,7 @@ class Solution {
 
     int[][] directions = new int[][]{{0, -1}, {-1, 0}, {1, 0}, {0, 1}};
 
+    // Performs better than orangesRotting__
     public int orangesRotting(int[][] grid) {
         m = grid.length;
         n = grid[0].length;
