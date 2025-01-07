@@ -1,5 +1,5 @@
 
-import java.util.stream.Collector.Characteristics;class Solution {
+class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
         /** PLAN - 
          * Brute Force : 
@@ -8,6 +8,8 @@ import java.util.stream.Collector.Characteristics;class Solution {
          *      If letter is found in the map, decrement its occurrence by 1, this a way of visiting the letter.
          *      If letter does not exist in the map OR occurrence of that letter in the map has reached 0, then return false        
          */
+
+        // Time Complexity and Space Complexity - O(N)
 
         HashMap<Character, Integer> map = new HashMap<>();
         for (Character letter: magazine.toCharArray()) {
