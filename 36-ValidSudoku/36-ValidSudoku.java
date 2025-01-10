@@ -1,43 +1,33 @@
-class Solution {
-    public boolean isValidSudoku(char[][] board) {
-        HashMap<Integer, HashSet<Character>> map = new HashMap<>();
+public static boolean isValidSudoku(char[][] board) {
+    int R = board.length, C = board[0].length;
 
-        for (int i = 0 ; i < board.length ; i++) {
-            Set<Character> val = new HashSet<>();
-            for (int j = 0; j < board[0].length ; j++) {
-                char ch = board[i][j];
+    int[] cols = new int[9];
+    int[] boxes = new int[9];
 
-                // MOST IMPORTANT PIECE
-                int index = (i / 3) * 3 + j / 3;
+    for (int r = 0; r < R; r++) {
+        int rowFlag = 0;
 
-                if (!map.containsKey(index)) map.put(index, new HashSet<>());
+        for (int c = 0; c < C; c++) {
+            char letter = board[r][c];
+            if (letter == '.') continue;
+            int v = letter - '0';
 
-                if (ch != '.') {
-                    if (val.contains(ch)) return false;
-                    val.add(ch);
+            // Verify row
+            if (((1 << v) & rowFlag) > 0) return false;
+            rowFlag |= 1 << v;
 
-                    if (map.get(index).contains(ch)) return false;
+            // Verify col
+            if (((1 << v) & cols[c]) > 0) return false;
+            cols[c] |= (1 << v);
 
-                    map.get(index).add(ch);
-                }
-
-                
-            }
-            
+            // Verify box
+            int boxR = r / 3, boxC = c / 3;
+            int boxI = boxR * 3 + boxC;
+            int boxFlag = boxes[boxI];
+            if ((boxFlag & (1 << v)) > 0) return false;
+            boxes[boxI] |= 1 << v;
         }
-
-        for (int i = 0 ; i < board.length ; i++) {
-            Set<Character> val = new HashSet<>();
-            for (int j = 0; j < board[0].length ; j++) {
-                char ch = board[j][i];
-                if (ch != '.') {
-                    if (val.contains(ch)) return false;
-                    val.add(ch);
-                }
-            }
-        }
-
-        return true;
-
     }
+
+    return true;
 }
