@@ -1,11 +1,17 @@
 class Solution {
     public int longestConsecutive(int[] nums) {
+        /* NOT TO FORGET -
+         * 1. Two edge cases
+         * 2. To remove duplicates
+         */
+
         if (nums.length == 0) return 0;
 
         if (nums.length == 1) return 1;
 
         int longestLen = 0;
         int len = 0;
+
         TreeSet<Integer> distinctNums = new TreeSet<>();
 
         // Get rid of duplicates first
@@ -14,6 +20,7 @@ class Solution {
         }
 
         Integer[] distinctArr = new Integer[distinctNums.size()];
+
         int j = 0;
         for (int num: distinctNums) {
             distinctArr[j] = num;
