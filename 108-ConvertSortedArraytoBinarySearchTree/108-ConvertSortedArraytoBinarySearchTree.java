@@ -21,7 +21,8 @@ class Solution {
     }
 
     private TreeNode bst(int[] nums, int left, int right) {
-
+        
+        // Important Piece to remember
         if (left > right) return null;
         
         int mid = left + (right - left) / 2;
