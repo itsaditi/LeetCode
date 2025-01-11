@@ -19,19 +19,17 @@ class Solution {
             // Skip checking for longest sequence starting from num,
             // if its previous number exists in the set.
             // As such number would already be a part of a longer sequence.
-            if (!set.contains(num - 1)){
-                int currNum = num;
-                int lcq = 1;
+            if (set.contains(num - 1)) continue;
+            
+            int currNum = num;
+            int lcq = 1;
 
-                while (set.contains(currNum + 1)) {
-                    currNum ++;
-                    lcq++;
-                }
-
-                longestlcq = Math.max(lcq, longestlcq);
+            while (set.contains(currNum + 1)) {
+                currNum ++;
+                lcq++;
             }
 
-            
+            longestlcq = Math.max(lcq, longestlcq);            
         }
 
         return longestlcq;
