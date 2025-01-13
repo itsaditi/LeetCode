@@ -25,6 +25,7 @@ class Solution {
                 if (grid[i][j] == '*') {
                     queue.add(new State(i, j, 0));
                     status[i][j] = true;
+                    break;
                 }
             }
         }
