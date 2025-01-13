@@ -40,7 +40,6 @@ class Solution {
             int col = poppedElement.col;
             int distance = poppedElement.distance;
 
-            System.out.println(row + " " + col + " " + grid[row][col]);
 
 
             if (grid[row][col] == '#') {
@@ -50,9 +49,6 @@ class Solution {
             for (int[] direction: DIRECTIONS) {
                 int adjRow = row + direction[0];
                 int adjCol = col + direction[1];
-                // System.out.println(adjRow + " " + adjCol + " " + isValid(adjRow, adjCol, n, m));
-                // System.out.println(adjRow + " " + adjCol + " " + (grid[adjRow][adjCol] == 'O'));
-                // System.out.println(adjRow + " " + adjCol + " " + (status[adjRow][adjCol] != Status.VISITED));
 
                 if (
                     isValid(adjRow, adjCol, n, m) && 
