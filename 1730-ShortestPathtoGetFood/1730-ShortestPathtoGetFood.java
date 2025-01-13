@@ -1,8 +1,3 @@
-enum Status {
-    VISITED,
-    OBSTACLE
-}
-
 class State {
     int row;
     int col;
@@ -21,7 +16,7 @@ class Solution {
         int m = grid[0].length;
 
         Queue<State> queue = new LinkedList<>();
-        Status[][] status = new Status[n][m];
+        boolean[][] status = new boolean[n][m];
         int[][] DIRECTIONS = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
 
@@ -29,7 +24,7 @@ class Solution {
             for (int j = 0 ; j < m ; j++) {
                 if (grid[i][j] == '*') {
                     queue.add(new State(i, j, 0));
-                    status[i][j] = Status.VISITED;
+                    status[i][j] = true;
                 }
             }
         }
@@ -39,8 +34,6 @@ class Solution {
             int row = poppedElement.row;
             int col = poppedElement.col;
             int distance = poppedElement.distance;
-
-
 
             if (grid[row][col] == '#') {
                 return distance;
@@ -53,10 +46,10 @@ class Solution {
                 if (
                     isValid(adjRow, adjCol, n, m) && 
                     grid[adjRow][adjCol] != 'X' &&
-                    status[adjRow][adjCol] != Status.VISITED
+                    !status[adjRow][adjCol]
                 ) {
                     queue.add(new State(adjRow, adjCol, distance + 1));
-                    status[adjRow][adjCol] = Status.VISITED;
+                    status[adjRow][adjCol] = true;
                 }
 
             }
