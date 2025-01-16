@@ -36,10 +36,6 @@ class Solution {
             return false;
         }
 
-        // if ((p.left.val != q.right.val) && (p.right.val != q.left.val)) {
-        //     return false;
-        // }
-
         if (p.val != q.val) {
             return false;
         }  
