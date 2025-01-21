@@ -1,4 +1,6 @@
 class Solution {
+
+    // TC and SC - O(N)
     public boolean validTree(int n, int[][] edges) {
         // Graph Theory
 
