@@ -1,33 +1,72 @@
-public static boolean isValidSudoku(char[][] board) {
-    int R = board.length, C = board[0].length;
+class Solution {
+    int n = 0;
+    public boolean isValidSudoku(char[][] board) {
+        n = board.length;
 
-    int[] cols = new int[9];
-    int[] boxes = new int[9];
+        HashMap<Integer, Set<Character>> blockMap = new HashMap<>();
 
-    for (int r = 0; r < R; r++) {
-        int rowFlag = 0;
+        // Index - (i / 3) * 3 + j / 3;
 
-        for (int c = 0; c < C; c++) {
-            char letter = board[r][c];
-            if (letter == '.') continue;
-            int v = letter - '0';
-
-            // Verify row
-            if (((1 << v) & rowFlag) > 0) return false;
-            rowFlag |= 1 << v;
-
-            // Verify col
-            if (((1 << v) & cols[c]) > 0) return false;
-            cols[c] |= (1 << v);
-
-            // Verify box
-            int boxR = r / 3, boxC = c / 3;
-            int boxI = boxR * 3 + boxC;
-            int boxFlag = boxes[boxI];
-            if ((boxFlag & (1 << v)) > 0) return false;
-            boxes[boxI] |= 1 << v;
+        for (int i = 0; i < n ; i++) {
+            if (!checkAcross(board, i)) return false;
         }
+
+        for (int i = 0 ; i < n ; i ++) {
+            for (int j = 0 ; j < n ; j++) {
+                char ch = board[i][j];
+                if (ch == '.') continue;
+
+                int blockIndex = (i / 3) * 3 + j / 3;
+
+                if (!blockMap.containsKey(blockIndex)) {
+                    blockMap.put(blockIndex, new HashSet<>());
+                }
+
+                if (blockMap.get(blockIndex).contains(ch)) {
+                    return false;
+                }
+                blockMap.get(blockIndex).add(ch);
+            }
+        }
+
+        return true;
+
+
     }
 
-    return true;
+    private boolean checkAcross(char[][] board, int index) {
+        HashSet<Character> vertical = new HashSet<>();
+
+        for (int i = 0 ; i < n ; i++) {
+            char ch = board[i][index];
+
+            if (ch == '.') continue;
+
+            if (vertical.contains(ch)) {
+                return false;
+            }
+
+            vertical.add(ch);
+        }
+
+        
+
+        HashSet<Character> horizontal = new HashSet<>();
+
+        for (int i = 0 ; i < n ; i++) {
+
+            char ch = board[index][i];
+
+            if (ch == '.') continue;
+
+            if (horizontal.contains(ch)) {
+                return false;
+            }
+
+
+            horizontal.add(ch);
+        }
+
+        return true;
+    }
 }
