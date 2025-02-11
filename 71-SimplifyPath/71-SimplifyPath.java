@@ -13,7 +13,6 @@ class Solution {
                 continue;
             }
         }
-        System.out.println(stack + " " + stack.size());
 
         if (stack.isEmpty()) return "/";
 
@@ -25,11 +24,6 @@ class Solution {
                 result = "/" + pop.concat(result);
             }
         }
-
-        System.out.println(result.length());
-
-
-
 
         return result.length() == 0 ? "/" : result;
     }
