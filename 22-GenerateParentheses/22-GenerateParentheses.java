@@ -1,3 +1,4 @@
+// Last updated: 4/11/2025, 9:29:02 AM
 class Solution {
     Set<String> res;
     int num = 0;
@@ -16,27 +17,27 @@ class Solution {
     public List<String> generateParenthesis(int n) {
         num = n;
         res = new HashSet<>();
-        createParanthesis("(", 1);
+        createParanthesis("(");
 
 
         return new ArrayList<>(res);
     }
 
-    private void createParanthesis(String str, int opParanthesis) {
+    private void createParanthesis(String str) {
         if (str.length() == num * 2) {
             if (isValid(str))
                 res.add(str);
             return;
         }
-        // System.out.println(str);
-        // if (opParanthesis <= num) {
-            for (Character bracket: paranthesis) {
-                if (bracket == '(')
-                    createParanthesis(str.concat("("), opParanthesis + 1);
-                else if (bracket == ')'){
-                    createParanthesis(str.concat(")"), opParanthesis);}
-            }
-        // }
+        
+        for (Character bracket: paranthesis) {
+            if (bracket == '(')
+                createParanthesis(str.concat("("));
+            else if (bracket == ')')
+                createParanthesis(str.concat(")"));
+            
+        }
+
 
         return;
 
