@@ -1,3 +1,4 @@
+// Last updated: 4/11/2025, 9:44:09 AM
 class Solution {
     int n = 0;
     public boolean isValidSudoku(char[][] board) {
