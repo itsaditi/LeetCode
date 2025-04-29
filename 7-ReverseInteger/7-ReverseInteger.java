@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
     public int reverse(int x) {
         boolean isSigned = x < 0 ? true : false;
