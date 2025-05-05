@@ -1,4 +1,4 @@
-// Last updated: 5/5/2025, 7:29:33 PM
+// Last updated: 5/5/2025, 7:29:52 PM
 class Solution {
     HashMap<Integer, List<Integer>> map = new HashMap<>();
     Set<Integer> visited = new HashSet<>();
@@ -21,7 +21,6 @@ class Solution {
                 }
             }
         }
-        System.out.println(map);
         
         if (map.isEmpty()) {
             return numOfCities;
@@ -38,7 +37,6 @@ class Solution {
                 unConnectedCity++;
             }
         }
-        System.out.println(map + " " + numOfProvinces + " " + unConnectedCity);
 
         return numOfProvinces + unConnectedCity;
     }
