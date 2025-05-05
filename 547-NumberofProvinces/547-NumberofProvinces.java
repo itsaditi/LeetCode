@@ -1,8 +1,10 @@
-// Last updated: 5/5/2025, 7:29:52 PM
+// Last updated: 5/5/2025, 7:33:51 PM
 class Solution {
     HashMap<Integer, List<Integer>> map = new HashMap<>();
     Set<Integer> visited = new HashSet<>();
 
+    // Time complexity - O(N^2)
+    // Space Complexity - O(N)
     public int findCircleNum(int[][] isConnected) {
 
         int connections = isConnected.length;
