@@ -1,4 +1,4 @@
-// Last updated: 5/5/2025, 6:44:04 PM
+// Last updated: 5/5/2025, 6:44:51 PM
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -16,6 +16,9 @@
  */
  // FIX THE
 class Solution {
+
+    // Time Complexity - O(NLogN)
+    // Space Complexity - O(N)
     TreeMap<Integer, TreeMap<Integer, List<Integer>>> map = new TreeMap<>();
 
     public List<List<Integer>> verticalTraversal(TreeNode root) {
