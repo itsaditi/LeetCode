@@ -1,4 +1,4 @@
-// Last updated: 5/5/2025, 6:44:51 PM
+// Last updated: 5/5/2025, 6:45:00 PM
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -38,9 +38,6 @@ class Solution {
             result.add(res);
 
         }
-
-
-        System.out.println(map);
         return result;
     }
 
