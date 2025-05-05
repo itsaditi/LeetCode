@@ -1,4 +1,4 @@
-// Last updated: 5/5/2025, 6:43:53 PM
+// Last updated: 5/5/2025, 6:44:04 PM
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -30,11 +30,9 @@ class Solution {
             for (Integer treeMapKey: treeMap.keySet()) {
                 List<Integer> ls = treeMap.get(treeMapKey);
                 Collections.sort(ls);
-                System.out.println(ls);
                 res.addAll(ls);
             }
             result.add(res);
-            System.out.println("=============");
 
         }
 
