@@ -1,7 +1,10 @@
-// Last updated: 5/6/2025, 11:13:24 PM
+// Last updated: 5/6/2025, 11:15:11 PM
 class Solution {
     int[][] DIRECTIONS = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
     int m, n, totalHouses ;
+    
+    // Time Complexity - O(M^2 N^2)
+    // Space Complexity - O(M N)
 
     public int shortestDistance(int[][] grid) {
         m = grid.length;
