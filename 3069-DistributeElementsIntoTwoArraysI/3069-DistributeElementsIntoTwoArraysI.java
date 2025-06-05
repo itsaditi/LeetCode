@@ -1,4 +1,4 @@
-// Last updated: 6/4/2025, 9:22:07 PM
+// Last updated: 6/4/2025, 9:22:15 PM
 class Solution {
     public int[] resultArray(int[] nums) {
         ArrayList<Integer> arr1 = new ArrayList<>();
@@ -15,18 +15,18 @@ class Solution {
             }
         }
 
-        int[] resultArr = new int[arr1.size() + arr2.size()];
-        int index = 0;
+        // int[] resultArr = new int[arr1.size() + arr2.size()];
+        // int index = 0;
 
-        for (int num: arr1) {
-            resultArr[index] = num;
-            index++;
-        }
+        // for (int num: arr1) {
+        //     resultArr[index] = num;
+        //     index++;
+        // }
         
-        for (int num: arr2) {
-            resultArr[index] = num;
-            index++;
-        }
+        // for (int num: arr2) {
+        //     resultArr[index] = num;
+        //     index++;
+        // }
 
         arr1.addAll(arr2);
         
