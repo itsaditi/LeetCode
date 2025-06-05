@@ -1,7 +1,8 @@
+// Last updated: 6/4/2025, 9:22:07 PM
 class Solution {
     public int[] resultArray(int[] nums) {
-        List<Integer> arr1 = new ArrayList<>();
-        List<Integer> arr2 = new ArrayList<>();
+        ArrayList<Integer> arr1 = new ArrayList<>();
+        ArrayList<Integer> arr2 = new ArrayList<>();
 
         arr1.add(nums[0]);
         arr2.add(nums[1]);
@@ -21,13 +22,17 @@ class Solution {
             resultArr[index] = num;
             index++;
         }
+        
         for (int num: arr2) {
             resultArr[index] = num;
             index++;
         }
 
+        arr1.addAll(arr2);
+        
 
-        return resultArr;
+
+        return arr1.stream().mapToInt(Integer::intValue).toArray();
 
     }
 }
