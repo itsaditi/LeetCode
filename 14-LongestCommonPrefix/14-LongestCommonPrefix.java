@@ -1,3 +1,4 @@
+// Last updated: 6/15/2025, 11:05:17 PM
 class Solution {
     public String longestCommonPrefix(String[] strs) {
         String res = "";
@@ -8,6 +9,8 @@ class Solution {
             smallestString = Math.min(smallestString, str.length());
         }
         
+        // Time Complexity - O(N L) where N is the length of the array and
+        // L is the length of the longest common prefix
         for (int counter = 0; counter < smallestString ; counter++) {
             char charAtIndex = strs[0].charAt(counter);
             int commonFound = 1;
@@ -25,7 +28,7 @@ class Solution {
             if (commonFound == strs.length) {
                 res += charAtIndex;
             }
-            if (unCommonFound == strs.length || unCommonFound > 1) {
+            if (unCommonFound > 1) {
                 break;
             }
         }
