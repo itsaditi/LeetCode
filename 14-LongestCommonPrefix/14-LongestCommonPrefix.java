@@ -1,4 +1,4 @@
-// Last updated: 6/15/2025, 11:05:17 PM
+// Last updated: 6/15/2025, 11:05:58 PM
 class Solution {
     public String longestCommonPrefix(String[] strs) {
         String res = "";
@@ -14,21 +14,21 @@ class Solution {
         for (int counter = 0; counter < smallestString ; counter++) {
             char charAtIndex = strs[0].charAt(counter);
             int commonFound = 1;
-            int unCommonFound = 1;
+            boolean unCommonFound = false;
 
             for (int i = 1 ; i < strs.length ; i ++) {
 
                 if (charAtIndex == strs[i].charAt(counter)) {
                     commonFound++;
                 } else {
-                    unCommonFound++;
+                    unCommonFound = true;
                     break;
                 }
             }
             if (commonFound == strs.length) {
                 res += charAtIndex;
             }
-            if (unCommonFound > 1) {
+            if (unCommonFound) {
                 break;
             }
         }
