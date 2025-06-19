@@ -1,4 +1,4 @@
-// Last updated: 6/18/2025, 8:55:11 PM
+// Last updated: 6/18/2025, 8:55:33 PM
 class Solution {
     public boolean isPalindrome(String s) {
         // Time Complexity --> O(n)
@@ -16,21 +16,13 @@ class Solution {
 
         int startingIndex = n % 2 == 0 ? midIndex : midIndex + 1;
 
-        int stackSize = stackedChar.size();
-        int counter = 0;
-
         for (int i = startingIndex ; i < n ; i ++) {
             Character topElem = stackedChar.pop();
             if (topElem != s.charAt(i)) {
                 return false;
-            } else {
-                counter ++;
             }
         }
 
-        if (stackSize != counter) {
-            return false;
-        }
         return true;
     }
 }
