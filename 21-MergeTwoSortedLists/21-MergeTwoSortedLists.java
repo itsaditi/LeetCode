@@ -1,4 +1,4 @@
-// Last updated: 6/18/2025, 8:20:12 PM
+// Last updated: 6/18/2025, 8:25:31 PM
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -31,7 +31,7 @@ class Solution {
             if (list1.val <= list2.val) {
                 resNode.next = new ListNode(list1.val);
                 list1 = list1.next;
-            } else if (list2.val < list1.val) {
+            } else {
                 resNode.next = new ListNode(list2.val);
                 list2 = list2.next;
             }
