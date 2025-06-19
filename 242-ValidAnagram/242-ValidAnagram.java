@@ -1,6 +1,6 @@
-// Last updated: 6/18/2025, 9:09:10 PM
+// Last updated: 6/18/2025, 9:09:25 PM
 class Solution {
-    public boolean isAnagram2(String s, String t) {
+    public boolean isAnagram(String s, String t) {
         HashMap<Character, Integer> map = new HashMap<>();
 
         for (Character elem: s.toCharArray()) {
@@ -29,7 +29,7 @@ class Solution {
         
     }
 
-    public boolean isAnagram(String s, String t) {
+    public boolean isAnagram2(String s, String t) {
         if (s.length() != t.length()) return false;
 
         char[] sArr = s.toCharArray();
