@@ -1,4 +1,4 @@
-// Last updated: 6/18/2025, 8:54:58 PM
+// Last updated: 6/18/2025, 8:55:11 PM
 class Solution {
     public boolean isPalindrome(String s) {
         // Time Complexity --> O(n)
@@ -28,9 +28,9 @@ class Solution {
             }
         }
 
-        // if (stackSize != counter) {
-        //     return false;
-        // }
+        if (stackSize != counter) {
+            return false;
+        }
         return true;
     }
 }
