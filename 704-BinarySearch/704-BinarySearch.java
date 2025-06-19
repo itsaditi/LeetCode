@@ -1,4 +1,4 @@
-// Last updated: 6/18/2025, 9:27:57 PM
+// Last updated: 6/18/2025, 9:33:52 PM
 class Solution {
     public int search(int[] nums, int target) {
         // Edge case
