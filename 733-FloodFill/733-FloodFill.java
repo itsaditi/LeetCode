@@ -1,3 +1,4 @@
+// Last updated: 6/18/2025, 9:39:25 PM
 class Solution {
     int m = 0, n = 0;
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
@@ -18,6 +19,7 @@ class Solution {
         queue.add(new int[]{sr, sc});
         while (!queue.isEmpty()) {
             int[] topElement = queue.poll();
+            image[topElement[0]][topElement[1]] = color;
 
             for (int[] direction: directions) {
                 int row = topElement[0] + direction[0];
@@ -26,7 +28,6 @@ class Solution {
                     queue.add(new int[]{row, col});
                 }                
             }
-            image[topElement[0]][topElement[1]] = color;
         }
         return image;
     }
