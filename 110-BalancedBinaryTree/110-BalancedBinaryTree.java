@@ -1,4 +1,4 @@
-// Last updated: 6/18/2025, 9:52:03 PM
+// Last updated: 6/18/2025, 9:55:42 PM
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -30,8 +30,11 @@ class Solution {
 
         // Check if subtrees have height within 1 --> Math.abs(height(root.left) - height(root.right))
         // And check if subtrees are balanced --> isBalanced recurssion
-        return Math.abs(height(root.left) - height(root.right)) < 2 &&
-                isBalanced(root.left) && isBalanced(root.right); 
+        // return Math.abs(height(root.left) - height(root.right)) < 2 &&
+        //         isBalanced(root.left) && isBalanced(root.right); 
+
+        return checkHeight(root) != -1;
+
     }
 
     private int height(TreeNode root) {
@@ -39,6 +42,21 @@ class Solution {
 
         return 1 + Math.max(height(root.left), height(root.right));
     }
+
+
+private int checkHeight(TreeNode node) {
+    if (node == null) return 0;
+
+    int leftHeight = checkHeight(node.left);
+    if (leftHeight == -1) return -1; // left subtree unbalanced
+
+    int rightHeight = checkHeight(node.right);
+    if (rightHeight == -1) return -1; // right subtree unbalanced
+
+    if (Math.abs(leftHeight - rightHeight) > 1) return -1; // current node unbalanced
+
+    return 1 + Math.max(leftHeight, rightHeight); // height of this node
+}
 
 
 }
