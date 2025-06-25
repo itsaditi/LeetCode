@@ -1,3 +1,4 @@
+// Last updated: 6/24/2025, 11:09:23 PM
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -16,7 +17,7 @@
 class Solution {
     /** BFS (Iteratively using queue) */
     // TC and SC - O(N) where N is the number of nodes in the BT
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder_BFS(TreeNode root) {
         if (root == null) {
             return new ArrayList<>();
         }
@@ -61,14 +62,14 @@ class Solution {
     HashMap<Integer, List<Integer>> levelMap = new HashMap<>();
     int levelsFound = 0;
 
-    public List<List<Integer>> levelOrder_DFS(TreeNode root) {
+    public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> resultLevelOrder = new ArrayList<>();
         
         if (root == null) return resultLevelOrder;
 
         dfs(root, 0);
 
-        for (int i = 0 ; i <= levelsFound; i ++) {
+        for (int i = 0 ; i < levelMap.size(); i ++) {
             resultLevelOrder.add(levelMap.get(i));
         }
 
