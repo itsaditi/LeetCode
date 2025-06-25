@@ -1,4 +1,4 @@
-// Last updated: 6/24/2025, 11:09:23 PM
+// Last updated: 6/24/2025, 11:09:31 PM
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -60,7 +60,6 @@ class Solution {
 
     /** DFS ( Using Recursion Stack ) */
     HashMap<Integer, List<Integer>> levelMap = new HashMap<>();
-    int levelsFound = 0;
 
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> resultLevelOrder = new ArrayList<>();
@@ -82,7 +81,6 @@ class Solution {
         if (!levelMap.containsKey(level)) {
             levelMap.put(level, new ArrayList<>());
         }
-        levelsFound = Math.max(level, levelsFound);
 
         levelMap.get(level).add(root.val);
 
