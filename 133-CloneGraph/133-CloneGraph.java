@@ -1,3 +1,4 @@
+// Last updated: 6/26/2025, 12:53:57 AM
 /*
 // Definition for a Node.
 class Node {
@@ -19,15 +20,15 @@ class Node {
 */
 
 class Solution {
-    // HashMap<Node, Node> visitedNode = new HashMap<>();
+    HashMap<Node, Node> visitedNode = new HashMap<>();
 
-    public Node cloneGraph(Node node) {
+    public Node cloneGraph_DFS(Node node) {
         // DFS
         // Time Complexity --> O(N + M) , where N is number of nodes and M is number of edges
         // Space Complexity --> O(N), for Hashmap and O(H) occupied by recursion stack where H is
         //      the height of the graph 
          if (node == null) return node;
-        /*  
+
         if (visitedNode.containsKey(node)) {
             return visitedNode.get(node);
         }
@@ -41,9 +42,14 @@ class Solution {
         }
 
         return clonedNode;
-        */
+        
+    }
 
-        // ITERATIVE 
+
+    public Node cloneGraph(Node node) {
+        // ITERATIVE | bfs
+        if (node == null) return node;
+
 
         HashMap<Node, Node> visitedNode = new HashMap<>();
         Queue<Node> queue = new LinkedList<>();
