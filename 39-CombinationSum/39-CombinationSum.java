@@ -1,3 +1,4 @@
+// Last updated: 6/26/2025, 12:29:03 AM
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
@@ -13,6 +14,7 @@ class Solution {
         List<Integer> curr,
         int startIndex
     ) {
+        System.out.println(curr);
         // Base case - 
         if (remain == 0) {
             result.add(new ArrayList<>(curr));
@@ -30,6 +32,7 @@ class Solution {
                 i
             );
             curr.remove(curr.size() - 1);
+
         }
         return;
     }
