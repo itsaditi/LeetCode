@@ -1,14 +1,46 @@
+// Last updated: 6/26/2025, 12:09:59 AM
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
-    private boolean isBSTHelper(TreeNode node, long lower_limit, long upper_limit) {
-        if (node == null) {
-            return true;
-        }
-        if (node.val <= lower_limit || upper_limit <= node.val) {
-            return false;
-        }
-        return isBSTHelper(node.left, lower_limit, node.val) && isBSTHelper(node.right, node.val, upper_limit);
+    ArrayList<Integer> inOrderTraversal = new ArrayList<>();
+
+    // Time and Space Complexity --> O(N)
+
+    public boolean isValidBST(TreeNode root) {        
+        dfs(root);
+        return isSorted();
+        
     }
-    public boolean isValidBST(TreeNode root) {
-        return isBSTHelper(root, Long.MIN_VALUE, Long.MAX_VALUE);
+
+    private boolean isSorted() {
+        for (int i = 0; i < inOrderTraversal.size() - 1; i++) {
+            if (inOrderTraversal.get(i) >= inOrderTraversal.get(i+1))
+                return false;
+        }
+        return true;
+    }
+
+    private void dfs(TreeNode root) {
+        if (root == null) return;
+
+        
+        dfs(root.left);
+        inOrderTraversal.add(root.val);
+
+        dfs(root.right);
+        
     }
 }
