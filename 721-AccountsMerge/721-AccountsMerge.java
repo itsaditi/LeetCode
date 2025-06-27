@@ -1,10 +1,10 @@
+// Last updated: 6/26/2025, 11:48:31 PM
 class Solution {
-        HashMap<String, List<String>> map = new HashMap<>();
-        HashSet<String> visited = new HashSet<>();
+    
+    HashMap<String, List<String>> map = new HashMap<>();
+    HashSet<String> visited = new HashSet<>();
 
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
-        Stack<String> stack = new Stack<>();
-
         List<List<String>> res = new ArrayList<>();
 
         // Create graph 
@@ -33,22 +33,6 @@ class Solution {
 
             for (int i = 1 ; i < account.size() ; i++) {
                 if (!visited.contains(account.get(i))) {
-                    // stack.add(account.get(i));
-
-                    // while(!stack.empty()) {
-                    //     String poppedEmail = stack.pop();
-                    //     if (map.containsKey(poppedEmail)) {
-                    //         for (String edges: map.get(poppedEmail)) {
-                    //             if (!stack.contains(edges) && !visited.contains(poppedEmail)) stack.add(edges);
-                    //         }
-
-                    //         if (!visited.contains(poppedEmail)) visited.add(poppedEmail);
-                    //         if (!tempRes.contains(poppedEmail)) tempRes.add(poppedEmail);
-                    //     } else {
-                    //         tempRes.add(poppedEmail);
-                    //     }
-                        
-                    // }
                     dfs(tempRes, account.get(i));
                 }
             }
