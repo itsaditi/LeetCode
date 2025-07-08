@@ -1,6 +1,6 @@
-// Last updated: 7/8/2025, 9:52:53 AM
+// Last updated: 7/8/2025, 9:53:07 AM
 class Solution {
-    int[][] DIRECTIONS = new int[][]{{0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}, {1, 0}, {-1, 0},};
+    int[][] DIRECTIONS = new int[][]{{0, 1}, {0, -1}, {1, 1}, {-1, 1}, {-1, -1}, {1, 0}, {-1, 0},{1, -1},};
     int row = 0, col = 0;
     int shortDistance = Integer.MAX_VALUE;
 
