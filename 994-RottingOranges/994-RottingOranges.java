@@ -1,3 +1,4 @@
+// Last updated: 7/8/2025, 9:58:55 AM
 class Solution {
     int m = 0, n = 0;
     int minNoOfMinutes = -1;
@@ -33,7 +34,7 @@ class Solution {
             int c = poppedElem[1];
             int minPassed = poppedElem[2];
 
-            if (minPassed > numOfMinutes) numOfMinutes = minPassed;
+            numOfMinutes = Math.max(minPassed, numOfMinutes);
 
             for (int[] direction: directions) {
                 int neighborRow = r + direction[0];
