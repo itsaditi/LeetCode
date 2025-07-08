@@ -1,10 +1,17 @@
+// Last updated: 7/8/2025, 9:52:53 AM
 class Solution {
-    int[][] DIRECTIONS = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
+    int[][] DIRECTIONS = new int[][]{{0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}, {1, 0}, {-1, 0},};
     int row = 0, col = 0;
     int shortDistance = Integer.MAX_VALUE;
 
     // BFS
     // TC - O(row  * col) (TC for BFS is O(vertices + edges))
+    /** Things to remember -
+     * * Use boolean array to mark nodes as visited.
+     * * Mark node as visited right after adding to the queue.
+     * * Check if grid value is 0 once, as enqueuing condition.
+     * * Return the distance immediately upon reaching the target cell
+     */
 
     public int shortestPathBinaryMatrix(int[][] grid) {
 
