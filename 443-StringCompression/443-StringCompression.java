@@ -1,4 +1,4 @@
-// Last updated: 7/20/2025, 9:34:25 PM
+// Last updated: 7/20/2025, 9:35:10 PM
 class Solution {
     public int compress(char[] chars) {
         Queue<Integer> queue = new LinkedList<>();
