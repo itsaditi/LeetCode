@@ -1,4 +1,4 @@
-// Last updated: 7/20/2025, 9:44:33 PM
+// Last updated: 7/21/2025, 7:03:52 PM
 class Solution {
     public String destCity(List<List<String>> paths) {
         HashMap<String, String> map = new HashMap<>();
