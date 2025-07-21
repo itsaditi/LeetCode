@@ -1,4 +1,4 @@
-// Last updated: 7/21/2025, 7:43:10 PM
+// Last updated: 7/21/2025, 7:43:26 PM
 class Solution {
     List<String> res = new ArrayList<>();
     int n = 0;
@@ -11,7 +11,6 @@ class Solution {
 
     private void backTracking(int index, String str, String s) {
         if (str.length() == n) {
-            System.out.println(str);
             res.add(str);
             return;
         }
