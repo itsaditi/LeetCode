@@ -1,4 +1,4 @@
-// Last updated: 7/20/2025, 9:34:11 PM
+// Last updated: 7/20/2025, 9:34:25 PM
 class Solution {
     public int compress(char[] chars) {
         Queue<Integer> queue = new LinkedList<>();
@@ -19,7 +19,6 @@ class Solution {
                 }
             }
 
-            System.out.println(ch + " " + occ);
             if (occ > 1) {
                 res += Character.toString(ch) + Integer.toString(occ);
             } else {
@@ -27,17 +26,6 @@ class Solution {
             }
 
         }
-
-        // for (Character key: map.keySet()) {
-        //     char ch = key;
-        //     Integer val = map.get(key);
-
-        //     if (val > 1) {
-        //         res += Character.toString(ch) + Integer.toString(val);
-        //     } else {
-        //         res += ch;
-        //     }
-        // }
 
         int i = 0;
         for (char ch: res.toCharArray()) {
