@@ -1,4 +1,4 @@
-// Last updated: 7/20/2025, 8:15:04 PM
+// Last updated: 7/20/2025, 8:15:24 PM
 class Solution {
     public List<Integer> filterRestaurants(int[][] restaurants, int veganFriendly, int maxPrice, int maxDistance) {
         List<int[]> tempResult = new ArrayList<>();
@@ -21,12 +21,12 @@ class Solution {
 
         tempResult.sort((a,b) -> {
             if (a[1] != b[1]) {
-                return Integer.compare(a[1], b[1]);
+                return Integer.compare(b[1], a[1]);
             } else {
-                return Integer.compare(a[0], b[0]);
+                return Integer.compare(b[0], a[0]);
             }
         });
-        Collections.reverse(tempResult);
+        // Collections.reverse(tempResult);
 
         List<Integer> result = new ArrayList<>();
 
