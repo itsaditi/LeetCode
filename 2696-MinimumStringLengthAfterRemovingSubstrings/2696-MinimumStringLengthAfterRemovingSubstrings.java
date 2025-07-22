@@ -1,4 +1,4 @@
-// Last updated: 7/21/2025, 8:10:34 PM
+// Last updated: 7/21/2025, 8:10:49 PM
 class Solution {
     public int minLength(String s) {
         String str = minString(s);;
@@ -21,7 +21,6 @@ class Solution {
         } else if (cdIndex > -1) {
             str = str.replaceFirst(str.substring(cdIndex, cdIndex + 2), "");
         }
-        System.out.println(str);
 
         return minString(str);
     }
