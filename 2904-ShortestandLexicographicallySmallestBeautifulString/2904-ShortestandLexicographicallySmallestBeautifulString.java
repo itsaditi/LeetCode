@@ -1,4 +1,4 @@
-// Last updated: 7/26/2025, 1:15:46 PM
+// Last updated: 7/26/2025, 1:21:39 PM
 class Solution {
     public String shortestBeautifulSubstring(String s, int k) {
         
