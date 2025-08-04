@@ -1,4 +1,4 @@
-// Last updated: 8/4/2025, 6:05:38 PM
+// Last updated: 8/4/2025, 6:05:43 PM
 /**
  * // This is the interface that allows for creating nested lists.
  * // You should not implement it, or speculate about its implementation
@@ -47,8 +47,6 @@ var NestedIterator = function(nestedList) {
     }
 
     dfs(nestedList);
-
-    console.log(flattenedList);
     
 };
 
