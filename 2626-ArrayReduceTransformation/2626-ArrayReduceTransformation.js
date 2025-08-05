@@ -1,4 +1,4 @@
-// Last updated: 8/5/2025, 11:46:53 AM
+// Last updated: 8/5/2025, 11:46:57 AM
 /**
  * @param {number[]} nums
  * @param {Function} fn
@@ -12,7 +12,6 @@ var reduce = function(nums, fn, init) {
 
     for (let i = 0 ; i < nums.length ; i++) {
         val = fn(i === 0 ? init : val, nums[i]);
-        console.log(val);
     }
 
     return val;
