@@ -1,4 +1,4 @@
-// Last updated: 8/5/2025, 11:46:57 AM
+// Last updated: 8/5/2025, 11:47:27 AM
 /**
  * @param {number[]} nums
  * @param {Function} fn
@@ -6,6 +6,9 @@
  * @return {number}
  */
 var reduce = function(nums, fn, init) {
+
+    return nums.reduce(fn, init);
+    
     if (nums.length === 0) return init;
 
     let val = 0;
