@@ -1,4 +1,4 @@
-// Last updated: 8/14/2025, 6:29:23 AM
+// Last updated: 8/14/2025, 6:31:02 AM
 /**
  * @param {number[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
@@ -12,13 +12,18 @@ class Computed {
     }
 }
 
+const TypeOfCell = {
+    LIVE: 'L',
+    DEAD: 'D'
+}
+
 const DIRECTIONS = [[0, 1], [1, 0], [-1, 0], [0, -1], [-1, -1], [1, 1], [-1, 1], [1, -1]];
 
 var gameOfLife = function(board) {
     const map = new Map();
 
     function computeNeighbours(r, c) {
-        let typeOfCell = board[r][c] === 0 ? 'D' : "L";
+        let typeOfCell = board[r][c] === 0 ? TypeOfCell.DEAD : TypeOfCell.LIVE;
         let liveCells = 0;
         let deadCells = 0;
 
@@ -64,7 +69,7 @@ var gameOfLife = function(board) {
         const liveCells = val.live;
         const deadCells = val.dead;
 
-        if (typeOfCell === 'L') {
+        if (typeOfCell === TypeOfCell.LIVE) {
             if (liveCells < 2 || liveCells > 3) {
                 board[cellRow][cellCol] = 0;
             } else if (liveCells === 2 || liveCells === 3) {
