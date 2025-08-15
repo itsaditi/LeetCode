@@ -1,4 +1,4 @@
-// Last updated: 8/15/2025, 6:04:37 PM
+// Last updated: 8/15/2025, 6:05:03 PM
 class Parantheses {
     char ch;
     int index;
