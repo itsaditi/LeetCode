@@ -1,6 +1,6 @@
 # Python Syntax Revision
 
-### Array
+### Array (Stack)
 ```python
 arr = []
 arr = [1, 2, 3]
@@ -19,6 +19,11 @@ for elem in arr:
 ## Iterate over array using index
 for index in range(0, len(arr)):
   print(arr[index])
+```
+## Array as Stack
+
+```python
+
 ```
 
 ### HashMap
